@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymLeaf.org"
+		th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		
+		<!-- Start Slider  -->
+<div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/4739055.jpg" class="d-block w-100" alt="..." height="350px">
+    </div>
+    <div class="carousel-item">
+      <img src="img/6874380.jpg" class="d-block w-100" alt="..." height="350px">
+    </div>
+    <div class="carousel-item">
+      <img src="img/cc.jpg" class="d-block w-100" alt="..." height="350px">
+    </div>
+    <div class="carousel-item">
+      <img src="img/15.jpg" class="d-block w-100" alt="..." height="350px">
+    </div>
+    <div class="carousel-item">
+      <img src="img/10626306.jpg" class="d-block w-100" alt="..." height="350px">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<style>
+.carousel-item {
+  transition: opacity 1s ease-in-out;
+}
+</style>
+<!-- End Slider  -->
+
+
+		
+		<!--< Start Category Module -->
+		<div class="container">
+			<div class="row">
+				<p class="text-center fs-4">Category</p>
+				<div class="col-md-2" th:each="c:${category}">
+					<div
+						class="shadow-sm p-3 mb-5 bg-body-tertiary rounded ">
+						<div class="card-body text-center">
+							<img th:src="@{'img/category_img/'+${c.imageName}}" width="65%" height="140px"><br>
+							<a th:href="@{'/products?category='+${c.name}}" class="text-decoration-none">[[${c.name}]]</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-2">
+					<div
+						class="shadow-sm p-3 mb-5 bg-body-tertiary rounded ">
+						<div class="card-body text-center">
+							<img src="img/category_img/beuty.png" width="65%" height="140px">
+							<p>Beauty</p>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-md-2">
+					<div
+						class="shadow-sm p-3 mb-5 bg-body-tertiary rounded ">
+						<div class="card-body text-center">
+							<img src="img/category_img/pant.png" width="65%" height="140px">
+							<p>Clothes</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-2">
+					<div
+						class="shadow-sm p-3 mb-5 bg-body-tertiary rounded ">
+						<div class="card-body text-center">
+							<img src="img/category_img/laptop.jpg" width="65%" height="140px">
+							<p>Laptop</p>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-md-2">
+					<div
+						class="shadow-sm p-3 mb-5 bg-body-tertiary rounded ">
+						<div class="card-body text-center">
+							<img src="img/category_img/mobile.png" width="65%" height="140px">
+							<p>Mobile</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-2">
+					<div
+						class="shadow-sm p-3 mb-5 bg-body-tertiary rounded ">
+						<div class="card-body text-center">
+							<img src="img/category_img/groccery.jpg" width="65%"
+								height="140px">
+							<p>Grocery</p>
+						</div>
+					</div>
+				</div> 
+
+
+			</div>
+		</div>
+		<!-- End Category Module -->
+		
+	</section>
+</body>
+</html>
