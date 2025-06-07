@@ -13,6 +13,15 @@
 					<div class="card card-sh">
 						<div class="card-header text-center ">
 							<p class="fs-4">Add Product</p>
+							<th:block th:if="${session.succMsg}">
+								<p class="text-success fw-bold">[[${session.succMsg}]]</p>
+								<th:block th:text="${@commonServiceImpl.removeSessionMessage()}"></th:block>
+							</th:block>
+
+							<th:block th:if="${session.errorMsg}">
+								<p class="text-danger fw-bold">[[${session.errorMsg}]]</p>
+								<th:block th:text="${@commonServiceImpl.removeSessionMessage()}"></th:block>
+							</th:block>
 						</div>
 						
 						<div class="card-body">
@@ -33,7 +42,7 @@
 									<label>Category</label> <select class="form-control"
 										name="category">
 										<option>--select--</option>
-										<option >Electronics</option>
+										<option th:each="cat:${category}">[[${cat.name}]]</option>
 									</select>
 								</div>
 
@@ -45,7 +54,7 @@
 								<div class="row">
 
 									<div class="mb-3 col">
-										<label>Enter Stock</label> <input type="text" name="stock"
+										<label>Enter Stock</label> <input type="number" name="stock"
 											class="form-control">
 									</div>
 

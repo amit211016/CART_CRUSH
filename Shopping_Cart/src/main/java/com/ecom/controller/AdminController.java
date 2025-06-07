@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -22,7 +23,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ecom.model.Category;
+import com.ecom.model.Product;
 import com.ecom.service.CategoryService;
+import com.ecom.service.ProductService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -33,6 +36,9 @@ public class AdminController {
 	@Autowired
 	private CategoryService categoryService;
 	
+	@Autowired
+	private ProductService productService;
+	
 	
 	@GetMapping(value = "/")
 	public String index() {
@@ -40,7 +46,9 @@ public class AdminController {
 	}
 	
 	@GetMapping(value = "/loadAddProduct")
-	public String loadAddProduct() {
+	public String loadAddProduct(Model model) {
+		List<Category> category = categoryService.getAllCategory();
+		model.addAttribute("category", category);
 		return "admin/add_product";
 	}
 	
@@ -49,6 +57,23 @@ public class AdminController {
 		model.addAttribute("categorys", categoryService.getAllCategory());
 		return "admin/category";
 	}
+    
+	@PostMapping(value="/saveProduct")
+	public String saveProduct(@ModelAttribute Product product, @RequestParam("file") MultipartFile file, HttpSession session) throws IOException{
+		String imageName = file.isEmpty() ? "default.jpg" : file.getOriginalFilename();
+		product.setImageName(imageName);
+		Product saveProduct = productService.saveProduct(product);
+		if(!ObjectUtils.isEmpty(saveProduct)) {
+			session.setAttribute("succMsg", "Product Saved Successfully");
+			File saveFile = new ClassPathResource("static/img").getFile();
+			Path path = Paths.get(saveFile.getAbsolutePath()+File.separator+"product_img"+File.separator+imageName);
+			Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
+		}else {
+			session.setAttribute("errorMsg", "Product Not Saved");
+		}
+		return "redirect:/admin/loadAddProduct";
+	}
+	
 	
 	//@RequestParam ("file") MultipartFile file : to get the file in input  
 	
@@ -93,6 +118,40 @@ public class AdminController {
 		return "redirect:/admin/category";
 	}
 	
+	@GetMapping(value = "/loadEditCategory/{id}")
+	public String loadEditCategory(@PathVariable int id, Model model) {
+		Category category = categoryService.getCategoryById(id);
+		model.addAttribute("category",category);
+		return "admin/edit_category";
+	}
 	
-
+	@PostMapping(value="/updateCategory")
+	public String updateCategory(@ModelAttribute Category category , @RequestParam("file") MultipartFile file , HttpSession session) throws IOException {
+		
+		Category oldCategory = categoryService.getCategoryById(category.getId());
+		String imageName = file.isEmpty() ? oldCategory.getImageName() : file.getOriginalFilename();
+		
+		if(!ObjectUtils.isEmpty(oldCategory)) {
+			oldCategory.setName(category.getName());
+			oldCategory.setIsActive(category.getIsActive());
+			oldCategory.setImageName(imageName);
+		}
+		
+		Category updateCategory = categoryService.saveCategory(oldCategory);     //   we use the save method of jpa to save data but it also used to update data  
+		
+		if(ObjectUtils.isEmpty(updateCategory)) {
+		    // this is used to store new image in category folder
+			if(!file.isEmpty()) {
+				File saveFile = new ClassPathResource("static/img").getFile();
+				Path path = Paths.get(saveFile.getAbsolutePath()+ File.separator + "category_img" + File.separator +file.getOriginalFilename());
+				Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
+				System.out.println(path);
+			 }
+			session.setAttribute("errorMsg", "Category not update due to internal error");
+		}else {
+			session.setAttribute("succMsg", "Category updated SuccsessFull");
+		}
+		
+		return "redirect:/admin/loadEditCategory/"+category.getId();
+	}
 }
