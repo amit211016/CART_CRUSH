@@ -1,7 +1,10 @@
 package com.ecom.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 
 import com.ecom.model.Product;
 import com.ecom.repository.ProductRepository;
@@ -11,8 +14,37 @@ import com.ecom.service.ProductService;
 public class ProductServiceImpl implements ProductService {
 	
 	@Autowired
-	private ProductRepository productRepository; 
+	private ProductRepository productRepository;
+	
+	//to Save the product
+	@Override
 	public Product saveProduct(Product product) {
 		return productRepository.save(product);
 	}
+	
+	//to Get All The Product
+	@Override
+	public List<Product> getAllProduct(){
+		return productRepository.findAll();
+	}
+	
+	//to Delete The Product
+	@Override
+	public boolean deleteProduct(int id) {
+		Product product = productRepository.findById(id).orElse(null);
+		if(!ObjectUtils.isEmpty(product)) {
+			productRepository.delete(product);
+			return true;
+		}
+		return false;
+	}
+
+	
+	//to Get Product
+	@Override
+	public Product getProductById(int id) {		
+		return productRepository.findById(id).orElse(null);
+	}
+
+	
 }
