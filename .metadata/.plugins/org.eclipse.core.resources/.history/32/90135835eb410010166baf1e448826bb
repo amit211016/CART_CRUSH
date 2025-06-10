@@ -1,7 +1,0 @@
-package com.ecom.model;
-
-public class Product {
-	private Integer id;
-	
-	private String description;
-}
