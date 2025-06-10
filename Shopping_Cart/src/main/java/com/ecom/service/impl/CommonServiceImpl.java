@@ -19,4 +19,10 @@ public class CommonServiceImpl implements CommonService {
 		session.removeAttribute("errorMsg");
 		session.removeAttribute("succMsg");
 	}
+	
+	@Override
+	public Double calculateDiscountPrice(Integer discount, Double price) {
+		Double discountPrice = price - (price * ((discount/(double)100)));
+		return discountPrice;
+	}
 }

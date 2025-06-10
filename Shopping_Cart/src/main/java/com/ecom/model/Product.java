@@ -28,6 +28,37 @@ public class Product {
 	private Integer stock;
 	
 	private String imageName;
+	
+	private Integer discount;
+	
+	private Double discountPrice;
+	
+	private Boolean isActive;
+	
+
+	public Boolean getIsActive() {
+		return isActive;
+	}
+
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	public Integer getDiscount() {
+		return discount;
+	}
+
+	public void setDiscount(Integer discount) {
+		this.discount = discount;
+	}
+
+	public Double getDiscountPrice() {
+		return discountPrice;
+	}
+
+	public void setDiscountPrice(Double discountPrice) {
+		this.discountPrice = discountPrice;
+	}
 
 	public Integer getId() {
 		return id;
