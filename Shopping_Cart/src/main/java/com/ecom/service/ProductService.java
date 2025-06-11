@@ -21,6 +21,8 @@ public interface ProductService {
 	public abstract Product updateProduct(Product product, MultipartFile file);
 	
 	public abstract Product saveProduct(Product product, MultipartFile file) throws IOException;
+	
+	public abstract List<Product> findProduct(String category);
 
 	
 }

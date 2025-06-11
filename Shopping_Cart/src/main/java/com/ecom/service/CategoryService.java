@@ -24,5 +24,7 @@ public interface CategoryService {
 	public abstract Category updateCategory(Category category, MultipartFile image);
 	
 	public abstract Category saveCategory(Category category, MultipartFile file) throws IOException;
+	
+	public abstract List<Category> findByIsActiveTrue();
 
 }

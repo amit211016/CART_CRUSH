@@ -111,5 +111,14 @@ public class ProductServiceImpl implements ProductService {
 		return null;
 	}
 
+	@Override
+	public List<Product> findProduct(String category) {
+		if(ObjectUtils.isEmpty(category)) {
+			return productRepository.findByIsActiveTrue();
+		}else {
+			return productRepository.findByCategoryAndIsActiveTrue(category);
+		}
+	}
+
 	
 }
