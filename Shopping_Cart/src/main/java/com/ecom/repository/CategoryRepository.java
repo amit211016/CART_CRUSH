@@ -12,7 +12,7 @@ import com.ecom.model.Category;
 public interface CategoryRepository extends JpaRepository<Category, Integer>{
 	
 	//to check whether the category exist or not
-	public Boolean existsByName(String name);
+	public abstract Boolean existsByName(String name);
 	
 	public abstract List<Category> findByIsActiveTrue();
 	

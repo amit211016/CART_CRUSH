@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<div class="container mt-5 p-5">
+
+			<div class="card card-sh">
+				<div class="card-header text-center">
+					<p class="fs-4">View Users</p>
+					<th:block th:if="${session.succMsg}">
+						<p class="text-success fw-bold">[[${session.succMsg}]]</p>
+						<th:block th:text="${@commonServiceImpl.removeSessionMessage()}"></th:block>
+					</th:block>
+
+					<th:block th:if="${session.errorMsg}">
+						<p class="text-danger fw-bold">[[${session.errorMsg}]]</p>
+						<th:block th:text="${@commonServiceImpl.removeSessionMessage()}"></th:block>
+					</th:block>
+				</div>
+				<div class="card-body">
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">Sl No</th>
+								<th scope="col">Profile</th>
+								<th scope="col">Name</th>
+								<th scope="col">Email</th>
+								<th scope="col">Mobile No</th>
+								<th scope="col">Address</th>
+								<th scope="col">Status</th>
+								<th scope="col">Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="c,u:${users}">
+								<th scope="row">[[${u.count}]]</th>
+								<td><img th:src="@{'/img/profile_img/'+${c.imageName}}"
+									width="70px" height="70px"></td>
+								<td>[[${c.name}]]</td>
+								<td>[[${c.email}]]</td>
+								<td>[[${c.mobileNo}]]</td>
+								<td>[[${c.address+', '+c.state+', '+c.city+', '+c.pinCode}]]</td>
+								<td>[[${c.isEnable}]]</td>
+								<td><a th:href="@{'/admin/updateUserStatus?status=true&id='+${c.id}}"
+									class="btn btn-sm btn-primary">Active</a> 
+										
+									<a
+									th:href="@{'/admin/updateUserStatus?status=false&id='+${c.id}}"
+									class="btn btn-sm btn-danger">
+										Inactive</a></td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</section>
+</body>
+</html>

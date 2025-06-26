@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +25,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.ecom.model.Category;
 import com.ecom.model.Product;
+import com.ecom.model.UserDtls;
 import com.ecom.service.CategoryService;
 import com.ecom.service.CommonService;
 import com.ecom.service.ProductService;
+import com.ecom.service.UserDtlsService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -41,8 +44,22 @@ public class AdminController {
 	private ProductService productService;
 	
 	@Autowired
+	private UserDtlsService userDtlsService;
+	
+	@Autowired
 	private CommonService commonService;
 	
+	@ModelAttribute
+	public void getUsersLoginDetail(Principal p, Model m) {
+		if(p!=null) {
+			String email = p.getName();
+			UserDtls userDtls = userDtlsService.findByEmail(email);
+			m.addAttribute("user", userDtls);
+		}
+			
+		List<Category> categories = categoryService.findByIsActiveTrue();
+		m.addAttribute("categories", categories);
+	}
 	
 	@GetMapping(value = "/")
 	public String index() {
@@ -91,7 +108,7 @@ public class AdminController {
 		
 		
 		if(!ObjectUtils.isEmpty(category)) {
-			if(!ObjectUtils.isEmpty(categoryService.existsByName(category.getName()))) {
+			if(categoryService.existsByName(category.getName())) {
 				session.setAttribute("errorMsg", "Category Already exist!");
 				return "redirect:/admin/category";
 			}
@@ -184,4 +201,23 @@ public class AdminController {
 
 		return "redirect:/admin/products";
 	}
+	
+	@GetMapping(value = "/getAllUser")
+	public String getAllUsers(Model m) {
+		List<UserDtls> allUser = userDtlsService.getAllUsersOfUserRole("Role_user");
+		System.out.println(allUser);
+		m.addAttribute("users", allUser);
+		return "admin/users";
+	}
+	
+	@GetMapping("/updateUserStatus")
+	public String updateAccountStatus(@RequestParam Boolean status, @RequestParam Integer id, HttpSession session) {
+		Boolean f = userDtlsService.updateAccountStatus(id, status);
+		
+		if(f) {
+			session.setAttribute("succMsg", "Status Updated Successfully");
+		}else session.setAttribute("errorMsg", "Something went Wrong on server!");
+		return "redirect:/admin/getAllUser";
+	}
+	
 }
