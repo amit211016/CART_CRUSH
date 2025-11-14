@@ -7,8 +7,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
-import java.util.Optional;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
@@ -22,20 +22,23 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
-	
+
+
+    private static final Logger log = LoggerFactory.getLogger(CategoryServiceImpl.class);
+
 	@Autowired
 	private CategoryRepository categoryRepository;
 	
 	
 	@Override
 	public Category saveCategory(Category category) {
-
+		log.info("inside saveCategory and recieved category");
 		return categoryRepository.save(category);
 	}
 
 	@Override
 	public Boolean existsByName(String name) {
-		System.out.println("sjdklfjlksj");
+		log.info("inside existsByname");
 		return categoryRepository.existsByName(name);
 	}
 	
