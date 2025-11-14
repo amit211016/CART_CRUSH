@@ -29,13 +29,13 @@ public class CategoryServiceImpl implements CategoryService {
 	
 	@Override
 	public Category saveCategory(Category category) {
-		
+
 		return categoryRepository.save(category);
 	}
 
 	@Override
 	public Boolean existsByName(String name) {
-		
+		System.out.println("sjdklfjlksj");
 		return categoryRepository.existsByName(name);
 	}
 	
