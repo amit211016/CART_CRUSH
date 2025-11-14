@@ -1,0 +1,72 @@
+[33mcommit eb55965d26f1e526717931ec1a4bb0a59754aa3b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: AMIT SINGH <amit211016cse@gmail.com>
+Date:   Fri Nov 14 16:22:25 2025 +0530
+
+    Add debug print statement in calculateDiscountPrice
+
+[33mcommit 818721a98b74a84e8283c7e05b5857a448c409df[m
+Author: amit <amit211016cse@gmail.com>
+Date:   Thu Jun 26 15:56:53 2025 +0530
+
+    Implemented user registration, login, and logout using Spring Security. Added dynamic navbar with category dropdown, role-based access for admin/user panels, and product display features. Secured the application with custom authentication handlers, account enable/disable functionality, and encrypted passwords using BCrypt. Integrated full user management in the admin panel with data fetched from the database.
+
+[33mcommit 6c035dfbb4be252a110eb88baee563ded755dcab[m
+Author: amit <amit211016cse@gmail.com>
+Date:   Wed Jun 11 15:07:52 2025 +0530
+
+    Made Product and View_Product page in Product Page We can see All Product and We can see Product By category and in view_product page we can see the Product Details
+
+[33mcommit 288f79d38547da1b639922dc1efa383fbafaf5c1[m
+Author: amit <amit211016cse@gmail.com>
+Date:   Tue Jun 10 13:51:33 2025 +0530
+
+    Added Discount and DiscountPrice Field in Product and Shift the code from AdminController to ProductService for clarity on AdminController
+
+[33mcommit 1316f479a38b836c13dbdb1a82c8915f4d3bef3b[m
+Author: amit <amit211016cse@gmail.com>
+Date:   Tue Jun 10 13:40:28 2025 +0530
+
+    Removed .metadata folder from Git tracking
+
+[33mcommit d071d5e4a57e4de7aa677582b1fae52a933a6bc8[m
+Author: amit <amit211016cse@gmail.com>
+Date:   Mon Jun 9 15:22:25 2025 +0530
+
+    Make view_product page and view, edit and delete product can be done and fix some Coding
+
+[33mcommit dc1c09cd59505e8edbd320b5fd1ed94996b8c78d[m
+Author: amit <amit211016cse@gmail.com>
+Date:   Sat Jun 7 12:10:41 2025 +0530
+
+    Added Add_Product Page and Write Backend Code in Order To Store The Product Details in database
+
+[33mcommit 3cce9b653b4fcccf07cbe2857d36b772547cd55d[m
+Author: amit <amit211016cse@gmail.com>
+Date:   Sat Jun 7 12:06:27 2025 +0530
+
+    Added changes from .metadata and cartcrush
+
+[33mcommit c103fb0a50ab22ea02b95ecd5074f97b61a3b0fa[m
+Merge: 00a3525 e4d2537
+Author: amit <amit211016cse@gmail.com>
+Date:   Thu Jun 5 11:33:45 2025 +0530
+
+    Merge branch 'main' of github.com:amit211016/CART_CRUSH
+
+[33mcommit 00a35257c7aec18db813605365af7cdeece47a20[m
+Author: amit <amit211016cse@gmail.com>
+Date:   Thu Jun 5 11:32:10 2025 +0530
+
+    added .metadata/ folder
+
+[33mcommit e4d25374d07bb36e52fdd907841ba57721905f4b[m
+Author: AMIT SINGH <amit211016cse@gmail.com>
+Date:   Mon Jun 2 15:50:42 2025 +0530
+
+    Create README.md
+
+[33mcommit 95c4abf1ec36c717462e57a58015342bfd482217[m
+Author: amit <amit211016cse@gmail.com>
+Date:   Mon Jun 2 15:44:24 2025 +0530
+
+    Add Category Page And Some Modification
