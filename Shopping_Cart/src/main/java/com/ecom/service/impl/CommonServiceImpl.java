@@ -22,6 +22,7 @@ public class CommonServiceImpl implements CommonService {
 	
 	@Override
 	public Double calculateDiscountPrice(Integer discount, Double price) {
+		System.out.println("did change");
 		Double discountPrice = price - (price * ((discount/(double)100)));
 		return discountPrice;
 	}
