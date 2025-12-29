@@ -1,7 +1,7 @@
 package com.ecom.service.impl;
 
+
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -24,8 +24,7 @@ import com.ecom.util.AppConstant;
 
 @Service
 public class UserDtlsServiceImpl implements UserDtlsService{
-	
-	@Autowired
+    @Autowired
 	private UserDtlsRepository userDtlsRepository;
 	
 	@Autowired
@@ -39,13 +38,13 @@ public class UserDtlsServiceImpl implements UserDtlsService{
 		userDtls.setPassword(encodePassword);
 		userDtls.setAccountNonLocked(true);
 		userDtls.setFailedAttempt(0);
-		
+        System.out.println("not it is good");
 		String imgName = img.isEmpty() ? "default.jpg" : img.getOriginalFilename();
 		userDtls.setImageName(imgName);
 		userDtls.setIsEnable(true);
 		UserDtls saveUserDtls = userDtlsRepository.save(userDtls);
-		
-		
+
+
 		if(!ObjectUtils.isEmpty(saveUserDtls)) {
 			try {
 				File saveFile = new ClassPathResource("static/img").getFile();

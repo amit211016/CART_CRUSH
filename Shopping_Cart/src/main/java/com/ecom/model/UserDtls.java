@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-public class UserDtls {
+public class    UserDtls {
 	
 	
 	@Id
