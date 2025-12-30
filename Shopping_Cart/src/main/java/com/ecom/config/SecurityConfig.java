@@ -41,21 +41,33 @@ public class SecurityConfig {
 	}
 
 
-	@Bean
-	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception
-	{
-		http.csrf(csrf->csrf.disable()).cors(cors->cors.disable())
-				.authorizeHttpRequests(req->req.requestMatchers("/user/**").hasRole("USER")
-				.requestMatchers("/admin/**").hasRole("ADMIN")
-				.requestMatchers("/**").permitAll())
-				.formLogin(form->form.loginPage("/signin")
-						.loginProcessingUrl("/login")
-//						.defaultSuccessUrl("/")
-						.failureHandler(authenticationFailueHandler)
-						.successHandler(authenticationSuccessHandler))
-				.logout(logout->logout.permitAll());
-		
-		return http.build();
-	}
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception
+    {
+        http
+                .csrf(csrf -> csrf.disable())
+                .cors(cors -> cors.disable())
+
+                .authorizeHttpRequests(req -> req
+                        .requestMatchers("/user/**").hasRole("USER")
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/h2-console/**", "/**").permitAll()
+                )
+
+                // IMPORTANT: Allow H2 frames (fixes your issue)
+                .headers(headers -> headers.frameOptions().disable())
+
+                .formLogin(form -> form
+                        .loginPage("/signin")
+                        .loginProcessingUrl("/login")
+                        .failureHandler(authenticationFailueHandler)
+                        .successHandler(authenticationSuccessHandler)
+                )
+
+                .logout(logout -> logout.permitAll());
+
+        return http.build();
+    }
+
 
 }
