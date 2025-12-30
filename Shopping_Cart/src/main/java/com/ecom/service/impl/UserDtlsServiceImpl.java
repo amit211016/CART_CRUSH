@@ -9,7 +9,11 @@ import java.nio.file.StandardCopyOption;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
+import com.ecom.dto.request.UserDtlsRequestDto;
+import com.ecom.dto.response.UserDtlsResponseDto;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -24,6 +28,10 @@ import com.ecom.util.AppConstant;
 
 @Service
 public class UserDtlsServiceImpl implements UserDtlsService{
+
+    @Autowired
+    private ModelMapper modelMapper;
+
     @Autowired
 	private UserDtlsRepository userDtlsRepository;
 	
@@ -31,17 +39,16 @@ public class UserDtlsServiceImpl implements UserDtlsService{
 	private PasswordEncoder passwordEncoder;
 	
 	@Override
-	public UserDtls saveUser(UserDtls userDtls, MultipartFile img) {
-		
-		userDtls.setRole("ROLE_USER");
-		String encodePassword = passwordEncoder.encode(userDtls.getPassword());
-		userDtls.setPassword(encodePassword);
-		userDtls.setAccountNonLocked(true);
-		userDtls.setFailedAttempt(0);
-        System.out.println("not it is good");
-		String imgName = img.isEmpty() ? "default.jpg" : img.getOriginalFilename();
-		userDtls.setImageName(imgName);
-		userDtls.setIsEnable(true);
+	public UserDtlsResponseDto saveUser(UserDtlsRequestDto userDtlsRequestDto, MultipartFile img) {
+		UserDtls userDtls = modelMapper.map(userDtlsRequestDto, UserDtls.class);
+        userDtls.setRole("ROLE_USER");
+        String encodePassword = passwordEncoder.encode(userDtlsRequestDto.getPassword());
+        userDtls.setPassword(encodePassword);
+        userDtls.setAccountNonLocked(true);
+        userDtls.setFailedAttempt(0);
+        String imgName = img.isEmpty() ? "default.jpg" : img.getOriginalFilename();
+        userDtls.setImageName(imgName);
+        userDtls.setIsEnable(true);
 		UserDtls saveUserDtls = userDtlsRepository.save(userDtls);
 
 
@@ -55,21 +62,21 @@ public class UserDtlsServiceImpl implements UserDtlsService{
 			}catch(Exception ex) {
 				ex.printStackTrace();
 			}
-			return saveUserDtls;
+			return modelMapper.map(saveUserDtls, UserDtlsResponseDto.class);
 		}
 		return null;
 	}
 
 	@Override
-	public UserDtls findByEmail(String email) {
+	public UserDtlsResponseDto findByEmail(String email) {
 		UserDtls userDtls = userDtlsRepository.findByEmail(email);
-		return userDtls;
+		return modelMapper.map(userDtls, UserDtlsResponseDto.class);
 	}
 
 	@Override
 	public List<UserDtls> getAllUsersOfUserRole(String role) {
-		return userDtlsRepository.findByRole(role);
-	}
+        return userDtlsRepository.findByRole(role);
+    }
 
 	@Override
 	public Boolean updateAccountStatus(Integer id, Boolean status) {

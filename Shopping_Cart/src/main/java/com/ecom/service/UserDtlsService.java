@@ -2,15 +2,17 @@ package com.ecom.service;
 
 import java.util.List;
 
+import com.ecom.dto.request.UserDtlsRequestDto;
+import com.ecom.dto.response.UserDtlsResponseDto;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ecom.model.UserDtls;
 
 public interface UserDtlsService {
 	
-	public abstract UserDtls saveUser(UserDtls userDtls, MultipartFile file);
+	public abstract UserDtlsResponseDto saveUser(UserDtlsRequestDto userDtlsRequestDto, MultipartFile file);
 
-	public abstract UserDtls findByEmail(String email);
+	public abstract UserDtlsResponseDto findByEmail(String email);
 
 	public abstract List<UserDtls> getAllUsersOfUserRole(String role);
 

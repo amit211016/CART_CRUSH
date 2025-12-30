@@ -3,6 +3,7 @@ package com.ecom.controller;
 import java.security.Principal;
 import java.util.List;
 
+import com.ecom.dto.response.UserDtlsResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,7 +36,7 @@ public class UserController {
 	public void getUsersLoginDetail(Principal p, Model m) {
 		if(p!=null) {
 			String email = p.getName();
-			UserDtls userDtls = userDtlsService.findByEmail(email);
+			UserDtlsResponseDto userDtls = userDtlsService.findByEmail(email);
 			m.addAttribute("user", userDtls);
 		}
 			

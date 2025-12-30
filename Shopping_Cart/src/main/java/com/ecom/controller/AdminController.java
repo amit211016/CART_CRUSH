@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.security.Principal;
 import java.util.List;
 
+import com.ecom.dto.response.UserDtlsResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -47,7 +48,7 @@ public class AdminController {
 	public void getUsersLoginDetail(Principal p, Model m) {
 		if(p!=null) {
 			String email = p.getName();
-			UserDtls userDtls = userDtlsService.findByEmail(email);
+			UserDtlsResponseDto userDtls = userDtlsService.findByEmail(email);
 			m.addAttribute("user", userDtls);
 		}
 			
@@ -59,7 +60,7 @@ public class AdminController {
 	public String index() {
 		return "admin/index";
 	}
-	
+
 	@GetMapping(value = "/loadAddProduct")
 	public String loadAddProduct(Model model) {
 		List<Category> category = categoryService.getAllCategory();

@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.security.Principal;
 import java.util.List;
 
+import com.ecom.dto.request.UserDtlsRequestDto;
+import com.ecom.dto.response.UserDtlsResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,7 +43,7 @@ public class HomeController {
 	public void getUsersLoginDetail(Principal p, Model m) {
 		if(p!=null) {
 			String email = p.getName();
-			UserDtls userDtls = userDtlsService.findByEmail(email);
+			UserDtlsResponseDto userDtls = userDtlsService.findByEmail(email);
 			m.addAttribute("user", userDtls);
 		}
 			
@@ -81,9 +83,9 @@ public class HomeController {
 	}
 	
 	@PostMapping(value="/saveUser")
-	public String saveUser(@ModelAttribute UserDtls userDtls, @RequestParam("img") MultipartFile file, HttpSession session) {
-		if(!ObjectUtils.isEmpty(userDtls)) {
-			UserDtls saveUserDtls = userDtlsService.saveUser(userDtls, file);
+	public String saveUser(@ModelAttribute UserDtlsRequestDto userDtlsRequestDto, @RequestParam("img") MultipartFile file, HttpSession session) {
+		if(!ObjectUtils.isEmpty(userDtlsRequestDto)) {
+			UserDtlsResponseDto saveUserDtls = userDtlsService.saveUser(userDtlsRequestDto, file);
 			if(!ObjectUtils.isEmpty(saveUserDtls)) {
 				session.setAttribute("succMsg", "User Registered Successfully");
 				return "redirect:/register" ;
