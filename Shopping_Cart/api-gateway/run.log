@@ -1,0 +1,100 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.ecom:api-gateway >------------------------
+[INFO] Building api-gateway 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.4:run (default-cli) > test-compile @ api-gateway >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ api-gateway ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ api-gateway ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ api-gateway ---
+[INFO] skip non existing resourceDirectory E:\work_space\proj\CART_CRUSH\Shopping_Cart\api-gateway\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ api-gateway ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.2.4:run (default-cli) < test-compile @ api-gateway <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.4:run (default-cli) @ api-gateway ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2026-02-24T18:14:45.073+05:30  INFO 13472 --- [api-gateway] [           main] com.ecom.gateway.ApiGatewayApplication   : Starting ApiGatewayApplication using Java 17.0.12 with PID 13472 (E:\work_space\proj\CART_CRUSH\Shopping_Cart\api-gateway\target\classes started by amits in E:\work_space\proj\CART_CRUSH\Shopping_Cart\api-gateway)
+2026-02-24T18:14:45.073+05:30  INFO 13472 --- [api-gateway] [           main] com.ecom.gateway.ApiGatewayApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-02-24T18:14:49.247+05:30  INFO 13472 --- [api-gateway] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1b945553-7622-3613-9933-2d2e3d9e6c3c
+2026-02-24T18:14:49.761+05:30  WARN 13472 --- [api-gateway] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-02-24T18:14:49.769+05:30  WARN 13472 --- [api-gateway] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-02-24T18:14:49.773+05:30  WARN 13472 --- [api-gateway] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-02-24T18:14:49.777+05:30  WARN 13472 --- [api-gateway] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-02-24T18:14:49.781+05:30  WARN 13472 --- [api-gateway] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-02-24T18:14:51.085+05:30  INFO 13472 --- [api-gateway] [           main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 9df6bded-99f7-479f-80ac-7c98d94c6d56
+
+2026-02-24T18:14:53.729+05:30  INFO 13472 --- [api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2026-02-24T18:14:53.729+05:30  INFO 13472 --- [api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2026-02-24T18:14:53.729+05:30  INFO 13472 --- [api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2026-02-24T18:14:53.729+05:30  INFO 13472 --- [api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2026-02-24T18:14:53.729+05:30  INFO 13472 --- [api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2026-02-24T18:14:53.729+05:30  INFO 13472 --- [api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2026-02-24T18:14:53.729+05:30  INFO 13472 --- [api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2026-02-24T18:14:53.729+05:30  INFO 13472 --- [api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2026-02-24T18:14:53.729+05:30  INFO 13472 --- [api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2026-02-24T18:14:53.729+05:30  INFO 13472 --- [api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2026-02-24T18:14:53.729+05:30  INFO 13472 --- [api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2026-02-24T18:14:53.729+05:30  INFO 13472 --- [api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2026-02-24T18:14:53.731+05:30  INFO 13472 --- [api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2026-02-24T18:14:53.731+05:30  INFO 13472 --- [api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2026-02-24T18:14:54.423+05:30  INFO 13472 --- [api-gateway] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2026-02-24T18:14:54.954+05:30  INFO 13472 --- [api-gateway] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-02-24T18:14:55.014+05:30  WARN 13472 --- [api-gateway] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-02-24T18:14:55.201+05:30  INFO 13472 --- [api-gateway] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-02-24T18:14:55.266+05:30  INFO 13472 --- [api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-02-24T18:14:55.279+05:30  INFO 13472 --- [api-gateway] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T18:14:55.304+05:30  INFO 13472 --- [api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-02-24T18:14:55.304+05:30  INFO 13472 --- [api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-02-24T18:14:55.304+05:30  INFO 13472 --- [api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-02-24T18:14:55.304+05:30  INFO 13472 --- [api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-02-24T18:14:55.304+05:30  INFO 13472 --- [api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-02-24T18:14:55.304+05:30  INFO 13472 --- [api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-02-24T18:14:55.304+05:30  INFO 13472 --- [api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-02-24T18:14:56.256+05:30  INFO 13472 --- [api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-02-24T18:14:56.256+05:30  INFO 13472 --- [api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-02-24T18:14:56.256+05:30  INFO 13472 --- [api-gateway] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-02-24T18:14:56.272+05:30  INFO 13472 --- [api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1771937096256 with initial instances count: 4
+2026-02-24T18:14:56.280+05:30  INFO 13472 --- [api-gateway] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY with eureka with status UP
+2026-02-24T18:14:56.280+05:30  INFO 13472 --- [api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1771937096280, current=UP, previous=STARTING]
+2026-02-24T18:14:56.280+05:30  INFO 13472 --- [api-gateway] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-G5S78M7:api-gateway:8088: registering service...
+2026-02-24T18:14:56.413+05:30  INFO 13472 --- [api-gateway] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-G5S78M7:api-gateway:8088 - registration status: 204
+2026-02-24T18:14:56.827+05:30  INFO 13472 --- [api-gateway] [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8088
+2026-02-24T18:14:56.827+05:30  INFO 13472 --- [api-gateway] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8088
+2026-02-24T18:14:57.362+05:30  INFO 13472 --- [api-gateway] [           main] com.ecom.gateway.ApiGatewayApplication   : Started ApiGatewayApplication in 13.702 seconds (process running for 14.559)
+2026-02-24T18:19:55.314+05:30  INFO 13472 --- [api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T18:24:55.328+05:30  INFO 13472 --- [api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T18:29:55.330+05:30  INFO 13472 --- [api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T18:34:55.345+05:30  INFO 13472 --- [api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T18:39:55.360+05:30  INFO 13472 --- [api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T18:44:55.363+05:30  INFO 13472 --- [api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T18:49:55.379+05:30  INFO 13472 --- [api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T18:54:55.396+05:30  INFO 13472 --- [api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T18:59:55.400+05:30  INFO 13472 --- [api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T19:04:55.410+05:30  INFO 13472 --- [api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T19:09:55.418+05:30  INFO 13472 --- [api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T19:14:55.428+05:30  INFO 13472 --- [api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T19:19:55.439+05:30  INFO 13472 --- [api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+^C

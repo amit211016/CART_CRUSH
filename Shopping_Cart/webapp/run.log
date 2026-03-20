@@ -1,0 +1,95 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< com.ecom:webapp >---------------------------
+[INFO] Building webapp 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.4:run (default-cli) > test-compile @ webapp >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ webapp ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 38 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ webapp ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ webapp ---
+[INFO] skip non existing resourceDirectory E:\work_space\proj\CART_CRUSH\Shopping_Cart\webapp\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ webapp ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.2.4:run (default-cli) < test-compile @ webapp <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.4:run (default-cli) @ webapp ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2026-02-24T18:14:55.164+05:30  INFO 25464 --- [webapp] [           main] com.ecom.webapp.WebAppApplication        : Starting WebAppApplication using Java 17.0.12 with PID 25464 (E:\work_space\proj\CART_CRUSH\Shopping_Cart\webapp\target\classes started by amits in E:\work_space\proj\CART_CRUSH\Shopping_Cart\webapp)
+2026-02-24T18:14:55.170+05:30  INFO 25464 --- [webapp] [           main] com.ecom.webapp.WebAppApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-02-24T18:14:56.593+05:30  INFO 25464 --- [webapp] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e919f6ee-1ce2-32f3-9361-a89d0e9689a1
+2026-02-24T18:14:56.687+05:30  WARN 25464 --- [webapp] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-02-24T18:14:56.688+05:30  WARN 25464 --- [webapp] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-02-24T18:14:57.075+05:30  INFO 25464 --- [webapp] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
+2026-02-24T18:14:57.097+05:30  INFO 25464 --- [webapp] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-24T18:14:57.097+05:30  INFO 25464 --- [webapp] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-02-24T18:14:57.221+05:30  INFO 25464 --- [webapp] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-24T18:14:57.221+05:30  INFO 25464 --- [webapp] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1958 ms
+2026-02-24T18:14:57.768+05:30  WARN 25464 --- [webapp] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: effbb37b-280c-44e2-b00a-8c8c86e210c1
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-24T18:14:57.877+05:30  INFO 25464 --- [webapp] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-02-24T18:14:57.997+05:30  INFO 25464 --- [webapp] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7a388990, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13213f26, org.springframework.security.web.context.SecurityContextHolderFilter@1a2e0d57, org.springframework.security.web.header.HeaderWriterFilter@61149fa5, org.springframework.web.filter.CorsFilter@4e4162bc, org.springframework.security.web.authentication.logout.LogoutFilter@6da4feeb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@10980560, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@739e8b96, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4c319d52, org.springframework.security.web.access.ExceptionTranslationFilter@58eac00e, org.springframework.security.web.access.intercept.AuthorizationFilter@21390938]
+2026-02-24T18:14:58.562+05:30  INFO 25464 --- [webapp] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-02-24T18:14:58.593+05:30  WARN 25464 --- [webapp] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-02-24T18:14:58.643+05:30  INFO 25464 --- [webapp] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-02-24T18:14:58.657+05:30  INFO 25464 --- [webapp] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-02-24T18:14:58.677+05:30  INFO 25464 --- [webapp] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T18:14:58.686+05:30  INFO 25464 --- [webapp] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-02-24T18:14:58.686+05:30  INFO 25464 --- [webapp] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-02-24T18:14:58.686+05:30  INFO 25464 --- [webapp] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-02-24T18:14:58.686+05:30  INFO 25464 --- [webapp] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-02-24T18:14:58.686+05:30  INFO 25464 --- [webapp] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-02-24T18:14:58.687+05:30  INFO 25464 --- [webapp] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-02-24T18:14:58.687+05:30  INFO 25464 --- [webapp] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-02-24T18:14:58.906+05:30  INFO 25464 --- [webapp] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-02-24T18:14:58.910+05:30  INFO 25464 --- [webapp] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-02-24T18:14:58.911+05:30  INFO 25464 --- [webapp] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-02-24T18:14:58.913+05:30  INFO 25464 --- [webapp] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1771937098913 with initial instances count: 4
+2026-02-24T18:14:58.918+05:30  INFO 25464 --- [webapp] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application WEBAPP with eureka with status UP
+2026-02-24T18:14:58.919+05:30  INFO 25464 --- [webapp] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1771937098919, current=UP, previous=STARTING]
+2026-02-24T18:14:58.920+05:30  INFO 25464 --- [webapp] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_WEBAPP/DESKTOP-G5S78M7:webapp:8085: registering service...
+2026-02-24T18:14:58.948+05:30  INFO 25464 --- [webapp] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8085 (http) with context path ''
+2026-02-24T18:14:58.948+05:30  INFO 25464 --- [webapp] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8085
+2026-02-24T18:14:58.964+05:30  INFO 25464 --- [webapp] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_WEBAPP/DESKTOP-G5S78M7:webapp:8085 - registration status: 204
+2026-02-24T18:14:59.062+05:30  INFO 25464 --- [webapp] [           main] com.ecom.webapp.WebAppApplication        : Started WebAppApplication in 4.934 seconds (process running for 5.754)
+2026-02-24T18:19:58.689+05:30  INFO 25464 --- [webapp] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T18:24:58.718+05:30  INFO 25464 --- [webapp] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T18:29:58.723+05:30  INFO 25464 --- [webapp] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T18:34:58.736+05:30  INFO 25464 --- [webapp] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T18:39:58.739+05:30  INFO 25464 --- [webapp] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T18:44:58.750+05:30  INFO 25464 --- [webapp] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T18:49:58.758+05:30  INFO 25464 --- [webapp] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T18:54:58.768+05:30  INFO 25464 --- [webapp] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T18:59:58.771+05:30  INFO 25464 --- [webapp] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T19:04:58.782+05:30  INFO 25464 --- [webapp] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T19:09:58.787+05:30  INFO 25464 --- [webapp] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T19:12:52.758+05:30  INFO 25464 --- [webapp] [nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-24T19:12:52.758+05:30  INFO 25464 --- [webapp] [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-24T19:12:52.797+05:30  INFO 25464 --- [webapp] [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 39 ms
+2026-02-24T19:12:53.143+05:30  WARN 25464 --- [webapp] [nio-8085-exec-2] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [101] milliseconds.
+2026-02-24T19:14:58.799+05:30  INFO 25464 --- [webapp] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-24T19:19:58.804+05:30  INFO 25464 --- [webapp] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+^C

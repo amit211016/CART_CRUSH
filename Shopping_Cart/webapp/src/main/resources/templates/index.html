@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{base::layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>CartCrush</title>
+</head>
+<body>
+<section>
+
+    <!-- Hero -->
+    <div class="container" style="margin-top:40px;">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4">
+                <div class="pill mb-3">Smart shopping, fast delivery</div>
+                <h1 class="fw-bold display-5" style="line-height:1.1;">Everything you need, delivered with <span style="color:#0d6efd;">CartCrush</span></h1>
+                <p class="lead mt-3 text-secondary">Browse fresh arrivals, trending electronics, and everyday essentials. Secure checkout, fast shipping, and honest pricing.</p>
+                <div class="d-flex gap-3 mt-4">
+                    <a class="btn btn-brand btn-lg px-4" href="/products">Explore products</a>
+                    <a class="btn btn-outline-primary btn-lg px-4" href="/signin" th:if="${session.user == null}">Sign in</a>
+                    <a class="btn btn-outline-primary btn-lg px-4" href="/admin"
+                       th:if="${session.user != null and session.user.role == 'ROLE_ADMIN'}">Manage catalog</a>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="hero-card">
+                    <img src="/img/tem2.png" class="w-100" alt="hero">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category grid -->
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="fw-semibold mb-0">Categories</h3>
+            <a class="text-decoration-none fw-semibold" href="/products" style="color:#0d6efd;">View all</a>
+        </div>
+        <div class="row g-3">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2" th:each="c:${categories}">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body text-center">
+                        <img th:src="@{'img/category_img/'+${c.imageName}}" class="img-fluid mb-2" style="height:110px; object-fit:contain;">
+                        <a th:href="@{'/products?category='+${c.name}}" class="stretched-link text-decoration-none fw-semibold">[[${c.name}]]</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured products -->
+    <div class="container mt-5 mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="fw-semibold mb-0">Featured picks</h3>
+            <a class="text-decoration-none fw-semibold" href="/products" style="color:#0d6efd;">Browse all</a>
+        </div>
+        <div class="row g-3">
+            <div class="col-12 col-md-6 col-lg-4" th:each="p:${products}">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="pill" th:text="${p.categoryName}">Category</span>
+                            <span class="fw-bold" style="color:#0d6efd;" th:text="${'₹'+p.discountPrice}">₹0</span>
+                        </div>
+                        <h5 class="fw-semibold" th:text="${p.title}">Product</h5>
+                        <p class="text-muted small" th:text="${#strings.abbreviate(p.description, 110)}">Description</p>
+                        <a class="btn btn-sm btn-brand" th:href="@{'/product/'+${p.id}}">View details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>
